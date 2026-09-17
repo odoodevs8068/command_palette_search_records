@@ -3,6 +3,7 @@
     'version': '1.2',
     'summary': "Command Pallete Search Records",
     'sequence': 10,
+    'license': "AGPL-3",
     'author' : 'Jagadish M',
     'depends': ['base', 'web'],
     'author': "JD DEVS",
