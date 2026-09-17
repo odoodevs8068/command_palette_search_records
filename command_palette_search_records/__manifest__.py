@@ -4,6 +4,7 @@
     'category': 'Tools',
     'license': "AGPL-3",
     'depends': [ 'base', 'web'],
+    'author': "JD DEVS",
     'data' : [
         'views/views.xml',
     ],

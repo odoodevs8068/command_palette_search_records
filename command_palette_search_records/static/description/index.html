@@ -1,209 +1,686 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Command Palette Search Records for Odoo — documentation, benefits, usage flow, architecture, configuration, security and performance.">
-<title>Command Palette Search Records — OdooERP</title>
-</head>
+<div style="background-color:#f6f8fb;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.65;">
 
-<body style="margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f6f8fb;color:#172033;line-height:1.65;">
+    <!-- ========================================================= -->
+    <!-- HEADER -->
+    <!-- ========================================================= -->
 
-<header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid #dfe4ec;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.02em;">
-      <div style="width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:#fff;background:#714b67;font-weight:900;">⌘</div>
-      <span>Command Palette Search Records</span>
+    <div style="background-color:#ffffff;border-bottom:1px solid #dfe4ec;">
+        <div class="container">
+            <div class="py-3">
+
+                <div class="d-flex align-items-center">
+
+                    <div style="width:34px;height:34px;line-height:34px;text-align:center;border-radius:10px;background-color:#714b67;color:#ffffff;font-weight:900;margin-right:11px;">
+                        &#8984;
+                    </div>
+
+                    <span style="font-weight:800;font-size:16px;color:#172033;">
+                        Command Palette Search Records
+                    </span>
+
+                </div>
+
+                <div class="mt-3 text-center">
+
+                    <a href="#benefits"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Benefits
+                    </a>
+
+                    <a href="#usage"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Usage
+                    </a>
+
+                    <a href="#flow"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Flow
+                    </a>
+
+                    <a href="#architecture"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Architecture
+                    </a>
+
+                    <a href="#configuration"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Configuration
+                    </a>
+
+                    <a href="#security"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Security
+                    </a>
+
+                    <a href="#performance"
+                       style="color:#667085;text-decoration:none;font-size:13px;margin:0 8px;">
+                        Performance
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <nav style="display:flex;gap:18px;font-size:13px;color:#667085;overflow:auto;white-space:nowrap;padding:4px 0;">
-      <a href="#benefits" style="color:inherit;text-decoration:none;">Benefits</a>
-      <a href="#usage" style="color:inherit;text-decoration:none;">Usage</a>
-      <a href="#flow" style="color:inherit;text-decoration:none;">Flow</a>
-      <a href="#architecture" style="color:inherit;text-decoration:none;">Architecture</a>
-      <a href="#security" style="color:inherit;text-decoration:none;">Security</a>
-      <a href="#performance" style="color:inherit;text-decoration:none;">Performance</a>
-    </nav>
-  </div>
-</header>
 
-<main>
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
 
-<section style="padding:82px 0 68px;background:radial-gradient(circle at 15% 15%,rgba(113,75,103,.13),transparent 32%),radial-gradient(circle at 85% 20%,rgba(49,111,176,.10),transparent 28%);">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;display:flex;gap:46px;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-    <div style="flex:1 1 560px;min-width:280px;">
-      <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#f3eaf0;color:#714b67;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;">
-        Odoo ERP Command Palette Extension
-      </div>
+    <section style="background-color:#f6f8fb;padding:70px 20px;">
 
-      <h1 style="margin:18px 0 16px;font-size:clamp(38px,5vw,64px);line-height:1.05;letter-spacing:-.055em;">
-        Find business records <span style="color:#714b67;">without leaving your keyboard.</span>
-      </h1>
+        <div class="container">
 
-      <p style="max-width:720px;font-size:18px;color:#667085;margin:0 0 28px;">
-        Extend the Odoo Command Palette with a configurable, server-side record search.
-        Type a record name or reference, receive matching records, and open the selected
-        record directly in its form view.
-      </p>
+            <div class="row align-items-center">
 
-      <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <a href="#usage" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:750;font-size:14px;border:1px solid #714b67;background:#714b67;color:#fff;">See how to use it</a>
-        <a href="#flow" style="display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;text-decoration:none;font-weight:750;font-size:14px;border:1px solid #dfe4ec;background:#fff;color:#172033;">View technical flow</a>
-      </div>
-    </div>
+                <div class="col-12 col-lg-7">
 
-    <div style="flex:1 1 330px;max-width:430px;display:flex;flex-wrap:wrap;gap:12px;">
-      <div style="flex:1 1 150px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;box-shadow:0 12px 32px rgba(22,32,51,.08);">
-        <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">2+</strong>
-        <small style="color:#667085;">Minimum characters before record search</small>
-      </div>
-      <div style="flex:1 1 150px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;box-shadow:0 12px 32px rgba(22,32,51,.08);">
-        <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">250 ms</strong>
-        <small style="color:#667085;">Client-side debounce before the RPC call</small>
-      </div>
-      <div style="flex:1 1 150px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;box-shadow:0 12px 32px rgba(22,32,51,.08);">
-        <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">10</strong>
-        <small style="color:#667085;">Maximum results per configured model</small>
-      </div>
-      <div style="flex:1 1 150px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;box-shadow:0 12px 32px rgba(22,32,51,.08);">
-        <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">100</strong>
-        <small style="color:#667085;">Maximum total record results</small>
-      </div>
-    </div>
-  </div>
-</section>
-  <section  style="padding:72px 0;">
-    <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-      <img src="./assets/screenshots/reference.gif" class="img-fluid mb-3">
-    </div>
-  </section>
+                    <div style="display:inline-block;background-color:#f3eaf0;color:#714b67;padding:6px 11px;border-radius:20px;font-size:12px;font-weight:800;letter-spacing:1px;">
+                        ODOO ERP COMMAND PALETTE EXTENSION
+                    </div>
 
-<section id="benefits" style="padding:72px 0;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Why use it</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Business benefits</h2>
-      <p style="margin:0;color:#667085;">The module turns the Command Palette into a cross-model navigation layer while keeping search configuration and access control on the Odoo server.</p>
-    </div>
+                    <h1 style="margin:18px 0 16px;font-size:48px;line-height:1.08;font-weight:800;color:#172033;">
+                        Find business records
+                        <span style="color:#714b67;">
+                            without leaving your keyboard.
+                        </span>
+                    </h1>
 
-    <div style="display:flex;flex-wrap:wrap;gap:18px;">
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">⌕</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">Faster record discovery</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">Users can search configured business records directly from the global Command Palette instead of manually navigating menus and list views.</p>
-      </article>
+                    <p style="max-width:720px;font-size:18px;color:#667085;margin-bottom:28px;">
+                        Extend the Odoo Command Palette with a configurable,
+                        server-side record search. Type a record name or
+                        reference, receive matching records, and open the
+                        selected record directly in its form view.
+                    </p>
 
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">⚙</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">Configurable models</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">Administrators choose which Odoo models participate in the search using the Command Palette configuration settings.</p>
-      </article>
+                    <div>
 
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">↗</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">Direct navigation</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">Selecting a result opens the corresponding record form using its model and record ID, reducing navigation steps.</p>
-      </article>
+                        <a href="#usage"
+                           style="display:inline-block;background-color:#714b67;color:#ffffff;text-decoration:none;padding:11px 16px;border-radius:8px;font-weight:700;font-size:14px;margin:4px;">
+                            See how to use it
+                        </a>
 
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">▣</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">One global search surface</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">Multiple configured models can appear under a dedicated <strong>Records</strong> category in the same Command Palette.</p>
-      </article>
+                        <a href="#flow"
+                           style="display:inline-block;background-color:#ffffff;color:#172033;text-decoration:none;padding:11px 16px;border-radius:8px;border:1px solid #dfe4ec;font-weight:700;font-size:14px;margin:4px;">
+                            View technical flow
+                        </a>
 
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">✓</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">Access-aware searching</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">The server checks model read permissions and performs searches in the current user environment rather than using unrestricted sudo access on target records.</p>
-      </article>
+                    </div>
 
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-        <div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">⚡</div>
-        <h3 style="margin:0 0 7px;font-size:18px;">Controlled server load</h3>
-        <p style="margin:0;color:#667085;font-size:14px;">Minimum search length, 250 ms debounce, per-model limits, and a global result cap keep interactive searches bounded.</p>
-      </article>
-    </div>
-  </div>
-</section>
+                </div>
 
-<section id="usage" style="padding:72px 0;background:#f0f3f8;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">User guide</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">How users work with it</h2>
-      <p style="margin:0;color:#667085;">The experience is intentionally short: open the palette, type enough of a record name, review the Records category, and open the record.</p>
-    </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:10px;">
-      <div style="flex:1 1 190px;background:#fff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;min-height:145px;">
-        <div style="width:28px;height:28px;border-radius:50%;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px;">1</div>
-        <h3 style="margin:0 0 6px;font-size:15px;">Open Command Palette</h3>
-        <p style="margin:0;font-size:13px;color:#667085;">Use the Odoo Command Palette from the normal keyboard/UI entry point.</p>
-      </div>
+                <div class="col-12 col-lg-5 mt-5 mt-lg-0">
 
-      <div style="flex:1 1 190px;background:#fff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;min-height:145px;">
-        <div style="width:28px;height:28px;border-radius:50%;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px;">2</div>
-        <h3 style="margin:0 0 6px;font-size:15px;">Enter a search</h3>
-        <p style="margin:0;font-size:13px;color:#667085;">Type at least two characters, for example <strong>p00018</strong>.</p>
-      </div>
+                    <div class="row">
 
-      <div style="flex:1 1 190px;background:#fff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;min-height:145px;">
-        <div style="width:28px;height:28px;border-radius:50%;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px;">3</div>
-        <h3 style="margin:0 0 6px;font-size:15px;">Wait for search</h3>
-        <p style="margin:0;font-size:13px;color:#667085;">The client waits 250 ms after typing stops, then calls the Odoo ORM method.</p>
-      </div>
+                        <div class="col-6 mb-3">
 
-      <div style="flex:1 1 190px;background:#fff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;min-height:145px;">
-        <div style="width:28px;height:28px;border-radius:50%;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px;">4</div>
-        <h3 style="margin:0 0 6px;font-size:15px;">Review Records</h3>
-        <p style="margin:0;font-size:13px;color:#667085;">Matching records are added to the dedicated Records category with model information in the label.</p>
-      </div>
+                            <div class="shadow-sm"
+                                 style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;min-height:115px;">
 
-      <div style="flex:1 1 190px;background:#fff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;min-height:145px;">
-        <div style="width:28px;height:28px;border-radius:50%;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;font-size:13px;margin-bottom:14px;">5</div>
-        <h3 style="margin:0 0 6px;font-size:15px;">Open the record</h3>
-        <p style="margin:0;font-size:13px;color:#667085;">Selecting a result executes an Odoo window action and opens the record form.</p>
-      </div>
-    </div>
-  </div>
-</section>
+                                <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">
+                                    2+
+                                </strong>
 
-<section id="flow" style="padding:72px 0;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Technical design</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">End-to-end process flow</h2>
-      <p style="margin:0;color:#667085;">The implementation connects Odoo configuration, the Python search service, the ORM RPC layer, and the Command Palette UI.</p>
-    </div>
+                                <small style="color:#667085;">
+                                    Minimum characters before record search
+                                </small>
 
-    <div style="background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;box-shadow:0 7px 22px rgba(22,32,51,.04);">
-      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;text-align:center;">
-        <div style="padding:14px 18px;border-radius:10px;background:#f3eaf0;color:#714b67;font-weight:800;">User Input</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#f0f3f8;font-weight:700;">CommandPalette</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#f0f3f8;font-weight:700;">processSearchValue()</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#f0f3f8;font-weight:700;">setCommands()</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#f0f3f8;font-weight:700;">searchRecords()</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#e8f7f0;color:#16845b;font-weight:800;">ORM RPC</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#e8f7f0;color:#16845b;font-weight:800;">Python Search</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#f3eaf0;color:#714b67;font-weight:800;">Records</div>
-        <div style="font-size:24px;color:#714b67;">→</div>
-        <div style="padding:14px 18px;border-radius:10px;background:#714b67;color:#fff;font-weight:800;">Open Form</div>
-      </div>
-    </div>
+                            </div>
 
-    <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:20px;">
-      <div style="flex:1 1 480px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin:0 0 10px;">Frontend lifecycle</h3>
-        <p style="color:#667085;font-size:14px;">When the user types <strong>/p00018</strong>, Odoo's namespace processing can strip the slash namespace so the custom provider receives <strong>p00018</strong> as the search value.</p>
-        <div style="background:#151922;border-radius:14px;overflow:auto;margin-top:16px;">
-          <pre style="margin:0;padding:20px;color: #FFF;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;">User types
+                        </div>
+
+
+                        <div class="col-6 mb-3">
+
+                            <div class="shadow-sm"
+                                 style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;min-height:115px;">
+
+                                <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">
+                                    250 ms
+                                </strong>
+
+                                <small style="color:#667085;">
+                                    Client-side debounce before RPC
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6">
+
+                            <div class="shadow-sm"
+                                 style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;min-height:115px;">
+
+                                <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">
+                                    10
+                                </strong>
+
+                                <small style="color:#667085;">
+                                    Maximum results per model
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-6">
+
+                            <div class="shadow-sm"
+                                 style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:22px;min-height:115px;">
+
+                                <strong style="display:block;font-size:30px;color:#714b67;line-height:1.1;">
+                                    100
+                                </strong>
+
+                                <small style="color:#667085;">
+                                    Maximum total record results
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SCREENSHOT -->
+    <!-- ========================================================= -->
+
+    <section style="background-color:#ffffff;padding:45px 20px;">
+        <div class="container text-center">
+            <img src="./assets/screenshots/reference.gif"
+                 alt="Command Palette Search Records for Odoo"
+                 style="width:100%;max-width:1100px;border:1px solid #dfe4ec;border-radius:10px;"
+                 class="img-fluid">
+        </div>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- BENEFITS -->
+    <!-- ========================================================= -->
+
+    <section id="benefits" style="background-color:#f6f8fb;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    WHY USE IT
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;color:#172033;">
+                    Business Benefits
+                </h2>
+
+                <p style="color:#667085;max-width:760px;margin:0 auto;">
+                    The module turns the Command Palette into a cross-model
+                    navigation layer while keeping search configuration and
+                    access control on the Odoo server.
+                </p>
+
+            </div>
+
+
+            <div class="row">
+
+                <!-- CARD 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#8981;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            Faster record discovery
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            Users can search configured business records
+                            directly from the global Command Palette instead
+                            of manually navigating menus and list views.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#9881;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            Configurable models
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            Administrators choose which Odoo models participate
+                            in the search using the Command Palette
+                            configuration settings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#8599;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            Direct navigation
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            Selecting a result opens the corresponding record
+                            form using its model and record ID, reducing
+                            navigation steps.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#9633;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            One global search surface
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            Multiple configured models can appear under a
+                            dedicated <strong>Records</strong> category in
+                            the same Command Palette.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 5 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#10003;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            Access-aware searching
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            The server checks model read permissions and
+                            performs searches in the current user environment
+                            rather than using unrestricted sudo access on
+                            target records.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 6 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100 shadow-sm"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            &#9889;
+                        </div>
+
+                        <h3 style="margin:0 0 7px;font-size:18px;">
+                            Controlled server load
+                        </h3>
+
+                        <p style="margin:0;color:#667085;font-size:14px;">
+                            Minimum search length, 250 ms debounce, per-model
+                            limits, and a global result cap keep interactive
+                            searches bounded.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- USAGE -->
+    <!-- ========================================================= -->
+
+    <section id="usage" style="background-color:#f0f3f8;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    USER GUIDE
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    How users work with it
+                </h2>
+
+                <p style="color:#667085;max-width:760px;margin:0 auto;">
+                    The experience is intentionally short: open the palette,
+                    type enough of a record name, review the Records category,
+                    and open the record.
+                </p>
+
+            </div>
+
+
+            <div class="row">
+
+                <!-- STEP 1 -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;">
+
+                        <div style="width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background-color:#f3eaf0;color:#714b67;font-weight:900;font-size:13px;margin-bottom:14px;">
+                            1
+                        </div>
+
+                        <h3 style="font-size:15px;">
+                            Open Command Palette
+                        </h3>
+
+                        <p style="font-size:13px;color:#667085;">
+                            Use the Odoo Command Palette from the normal
+                            keyboard or UI entry point.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 2 -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;">
+
+                        <div style="width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background-color:#f3eaf0;color:#714b67;font-weight:900;font-size:13px;margin-bottom:14px;">
+                            2
+                        </div>
+
+                        <h3 style="font-size:15px;">
+                            Enter a search
+                        </h3>
+
+                        <p style="font-size:13px;color:#667085;">
+                            Type at least two characters, for example
+                            <strong>p00018</strong>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 3 -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;">
+
+                        <div style="width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background-color:#f3eaf0;color:#714b67;font-weight:900;font-size:13px;margin-bottom:14px;">
+                            3
+                        </div>
+
+                        <h3 style="font-size:15px;">
+                            Wait for search
+                        </h3>
+
+                        <p style="font-size:13px;color:#667085;">
+                            The client waits 250 ms after typing stops, then
+                            calls the Odoo ORM method.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 4 -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;">
+
+                        <div style="width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background-color:#f3eaf0;color:#714b67;font-weight:900;font-size:13px;margin-bottom:14px;">
+                            4
+                        </div>
+
+                        <h3 style="font-size:15px;">
+                            Review Records
+                        </h3>
+
+                        <p style="font-size:13px;color:#667085;">
+                            Matching records are added to the dedicated
+                            Records category with model information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEP 5 -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:14px;padding:22px;">
+
+                        <div style="width:28px;height:28px;line-height:28px;text-align:center;border-radius:50%;background-color:#f3eaf0;color:#714b67;font-weight:900;font-size:13px;margin-bottom:14px;">
+                            5
+                        </div>
+
+                        <h3 style="font-size:15px;">
+                            Open the record
+                        </h3>
+
+                        <p style="font-size:13px;color:#667085;">
+                            Selecting a result executes an Odoo window action
+                            and opens the record form.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FLOW -->
+    <!-- ========================================================= -->
+
+    <section id="flow" style="background-color:#ffffff;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    TECHNICAL DESIGN
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    End-to-end process flow
+                </h2>
+
+                <p style="color:#667085;max-width:760px;margin:0 auto;">
+                    The implementation connects Odoo configuration, the
+                    Python search service, the ORM RPC layer, and the
+                    Command Palette UI.
+                </p>
+
+            </div>
+
+
+            <!-- FLOW DIAGRAM -->
+
+            <div class="shadow-sm"
+                 style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                <div class="text-center">
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f3eaf0;color:#714b67;font-weight:800;margin:4px;">
+                        User Input
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f0f3f8;font-weight:700;margin:4px;">
+                        CommandPalette
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f0f3f8;font-weight:700;margin:4px;">
+                        processSearchValue()
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f0f3f8;font-weight:700;margin:4px;">
+                        setCommands()
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f0f3f8;font-weight:700;margin:4px;">
+                        searchRecords()
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#e8f7f0;color:#16845b;font-weight:800;margin:4px;">
+                        ORM RPC
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#e8f7f0;color:#16845b;font-weight:800;margin:4px;">
+                        Python Search
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#f3eaf0;color:#714b67;font-weight:800;margin:4px;">
+                        Records
+                    </span>
+
+                    <span style="font-size:22px;color:#714b67;">
+                        &rarr;
+                    </span>
+
+                    <span style="display:inline-block;padding:13px 17px;border-radius:8px;background-color:#714b67;color:#ffffff;font-weight:800;margin:4px;">
+                        Open Form
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="row mt-4">
+
+                <!-- FRONTEND -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            Frontend lifecycle
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            When the user types <strong>/p00018</strong>,
+                            Odoo's namespace processing can strip the slash
+                            namespace so the custom provider receives
+                            <strong>p00018</strong> as the search value.
+                        </p>
+
+                        <div style="background-color:#151922;border-radius:12px;overflow:auto;margin-top:16px;">
+
+<pre style="margin:0;padding:20px;color:#ffffff;font-size:13px;line-height:1.7;white-space:pre-wrap;">User types
     ↓
 debounceSearch(value)
     ↓
@@ -222,14 +699,34 @@ search_records(searchValue)
 Records category
     ↓
 ActionService → record form</pre>
-        </div>
-      </div>
 
-      <div style="flex:1 1 480px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin:0 0 10px;">Backend lifecycle</h3>
-        <p style="color:#667085;font-size:14px;">The Python service loads the configured models, checks read access, performs <code style="background:#f0f3f8;padding:2px 5px;border-radius:4px;">name_search()</code>, and returns a bounded normalized result set.</p>
-        <div style="background:#151922;border-radius:14px;overflow:auto;margin-top:16px;">
-          <pre style="margin:0;padding:20px;color:#FFF;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;">search_records(search_value)
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BACKEND -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            Backend lifecycle
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The Python service loads the configured models,
+                            checks read access, performs
+                            <code>name_search()</code>, and returns a
+                            bounded normalized result set.
+                        </p>
+
+                        <div style="background-color:#151922;border-radius:12px;overflow:auto;margin-top:16px;">
+
+<pre style="margin:0;padding:20px;color:#ffffff;font-size:13px;line-height:1.7;white-space:pre-wrap;">search_records(search_value)
     ↓
 validate minimum length
     ↓
@@ -244,219 +741,992 @@ name_search(name, operator="ilike")
 normalize result payload
     ↓
 return up to 100 records</pre>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="architecture" style="padding:72px 0;background:#f0f3f8;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Architecture</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Four-layer architecture</h2>
-      <p style="margin:0;color:#667085;">Each layer has a focused responsibility, making the module easier to configure, maintain, debug, and extend.</p>
-    </div>
+    </section>
 
-    <div style="display:flex;flex-wrap:wrap;gap:20px;">
-      <div style="flex:1 1 500px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin-top:0;">1. Configuration layer</h3>
-        <div style="margin-bottom:10px;">
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">res.config.settings</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">ir.config_parameter</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">Many2many ir.model</span>
+
+    <!-- ========================================================= -->
+    <!-- ARCHITECTURE -->
+    <!-- ========================================================= -->
+
+    <section id="architecture" style="background-color:#f0f3f8;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    ARCHITECTURE
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Four-layer architecture
+                </h2>
+
+                <p style="color:#667085;max-width:760px;margin:0 auto;">
+                    Each layer has a focused responsibility, making the
+                    module easier to configure, maintain, debug, and extend.
+                </p>
+
+            </div>
+
+
+            <div class="row">
+
+                <!-- CONFIGURATION -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            1. Configuration layer
+                        </h3>
+
+                        <div class="mb-3">
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                res.config.settings
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                ir.config_parameter
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                Many2many ir.model
+                            </span>
+
+                        </div>
+
+                        <ul style="color:#667085;padding-left:20px;">
+
+                            <li style="margin-bottom:8px;">
+                                Administrator selects searchable Odoo models.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                <code>set_values()</code> stores selected
+                                model IDs as JSON.
+                            </li>
+
+                            <li>
+                                <code>get_values()</code> restores them into
+                                the settings field.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVER -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            2. Server search layer
+                        </h3>
+
+                        <div class="mb-3">
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                AbstractModel
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                name_search()
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                ilike
+                            </span>
+
+                        </div>
+
+                        <ul style="color:#667085;padding-left:20px;">
+
+                            <li style="margin-bottom:8px;">
+                                Frontend calls
+                                <code>command.palette.record.search.search_records()</code>.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                Configured model IDs are loaded from
+                                <code>ir.config_parameter</code>.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                Each model is searched using normal Odoo
+                                <code>name_search()</code>.
+                            </li>
+
+                            <li>
+                                Results are normalized into ID, name, model,
+                                description, and model label.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FRONTEND -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            3. Frontend integration
+                        </h3>
+
+                        <div class="mb-3">
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                CommandPalette patch
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                ORM service
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                Action service
+                            </span>
+
+                        </div>
+
+                        <ul style="color:#667085;padding-left:20px;">
+
+                            <li style="margin-bottom:8px;">
+                                <code>searchRecords()</code> debounces typing
+                                and tracks a search sequence.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                Returned records become commands in the
+                                <strong>Records</strong> category.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                Each command receives a key ID and split name.
+                            </li>
+
+                            <li>
+                                The action service opens the selected
+                                record form.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT -->
+                <div class="col-12 col-lg-6 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
+
+                        <h3>
+                            4. User result
+                        </h3>
+
+                        <div class="mb-3">
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                Global search
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                Keyboard-first
+                            </span>
+
+                            <span style="display:inline-block;margin:3px;padding:4px 8px;border-radius:7px;background-color:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">
+                                Direct form
+                            </span>
+
+                        </div>
+
+                        <ul style="color:#667085;padding-left:20px;">
+
+                            <li style="margin-bottom:8px;">
+                                Users see relevant configured records without
+                                opening a list view first.
+                            </li>
+
+                            <li style="margin-bottom:8px;">
+                                The displayed label follows
+                                <code>description / record name</code>.
+                            </li>
+
+                            <li>
+                                The result remains linked to the exact Odoo
+                                model and record ID.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <ul style="margin:12px 0 0;padding-left:20px;color:#667085;">
-          <li style="margin:8px 0;">Administrator selects searchable Odoo models.</li>
-          <li style="margin:8px 0;"><code>set_values()</code> stores selected model IDs as JSON.</li>
-          <li style="margin:8px 0;"><code>get_values()</code> restores them into the settings field.</li>
-        </ul>
-      </div>
 
-      <div style="flex:1 1 500px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin-top:0;">2. Server search layer</h3>
-        <div style="margin-bottom:10px;">
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">AbstractModel</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">name_search()</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">ilike</span>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CONFIGURATION -->
+    <!-- ========================================================= -->
+
+    <section id="configuration" style="background-color:#ffffff;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    ADMINISTRATION
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Configuration and usage matrix
+                </h2>
+
+                <p style="color:#667085;">
+                    The behavior is controlled by a small number of explicit
+                    limits and settings.
+                </p>
+
+            </div>
+
+
+            <div style="overflow:auto;background-color:#ffffff;border:1px solid #dfe4ec;border-radius:12px;">
+
+                <table class="table table-bordered mb-0"
+                       style="min-width:700px;">
+
+                    <thead>
+
+                        <tr style="background-color:#f0f3f8;">
+
+                            <th style="padding:15px 16px;font-size:12px;text-transform:uppercase;color:#586276;">
+                                Area
+                            </th>
+
+                            <th style="padding:15px 16px;font-size:12px;text-transform:uppercase;color:#586276;">
+                                Current implementation
+                            </th>
+
+                            <th style="padding:15px 16px;font-size:12px;text-transform:uppercase;color:#586276;">
+                                Purpose
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Searchable models</td>
+                            <td>Many2many <code>ir.model</code></td>
+                            <td>
+                                Defines which models can participate in
+                                global record search.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Minimum input</td>
+                            <td>2 characters</td>
+                            <td>
+                                Avoids unnecessary server requests for
+                                very short values.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Client debounce</td>
+                            <td>250 ms</td>
+                            <td>
+                                Groups rapid keystrokes into fewer RPC calls.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Per-model limit</td>
+                            <td>10 records</td>
+                            <td>
+                                Prevents one model from consuming the
+                                entire result set.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Total limit</td>
+                            <td>100 records</td>
+                            <td>
+                                Bounds payload and Command Palette result
+                                volume.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Search method</td>
+                            <td>
+                                <code>name_search()</code> +
+                                <code>ilike</code>
+                            </td>
+                            <td>
+                                Uses the model's normal Odoo name-search
+                                behavior.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Result category</td>
+                            <td>
+                                <strong>Records</strong>
+                            </td>
+                            <td>
+                                Separates business-record results from
+                                standard commands.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Open behavior</td>
+                            <td>
+                                <code>ir.actions.act_window</code>
+                            </td>
+                            <td>
+                                Opens the exact model/record form in the
+                                current window.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
         </div>
-        <ul style="margin:12px 0 0;padding-left:20px;color:#667085;">
-          <li style="margin:8px 0;">Frontend calls <code>command.palette.record.search.search_records()</code>.</li>
-          <li style="margin:8px 0;">Configured model IDs are loaded from <code>ir.config_parameter</code>.</li>
-          <li style="margin:8px 0;">Each model is searched using normal Odoo <code>name_search()</code>.</li>
-          <li style="margin:8px 0;">Results are normalized into ID, name, model, description, and model label.</li>
-        </ul>
-      </div>
 
-      <div style="flex:1 1 500px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin-top:0;">3. Frontend integration</h3>
-        <div style="margin-bottom:10px;">
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">CommandPalette patch</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">ORM service</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">Action service</span>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SECURITY -->
+    <!-- ========================================================= -->
+
+    <section id="security" style="background-color:#f0f3f8;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    SECURITY
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Access-control behavior
+                </h2>
+
+                <p style="color:#667085;max-width:760px;margin:0 auto;">
+                    The configuration is read through sudo because it is
+                    stored in system configuration, while target record
+                    searches run in the current user's environment.
+                </p>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                    <div style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:12px;padding:18px;">
+
+                        <div class="d-flex">
+
+                            <div style="width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background-color:#e8f7f0;color:#16845b;font-weight:900;margin-right:12px;flex-shrink:0;">
+                                &#10003;
+                            </div>
+
+                            <div>
+
+                                <strong style="display:block;">
+                                    Model read access is checked
+                                </strong>
+
+                                <span style="color:#667085;font-size:13px;">
+                                    The server calls
+                                    <code>check_access_rights("read")</code>
+                                    before searching a configured model.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                    <div style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:12px;padding:18px;">
+
+                        <div class="d-flex">
+
+                            <div style="width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background-color:#e8f7f0;color:#16845b;font-weight:900;margin-right:12px;flex-shrink:0;">
+                                &#10003;
+                            </div>
+
+                            <div>
+
+                                <strong style="display:block;">
+                                    No sudo on target searches
+                                </strong>
+
+                                <span style="color:#667085;font-size:13px;">
+                                    The configured target model is obtained
+                                    from the current environment, so normal
+                                    Odoo access behavior remains relevant.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                    <div style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:12px;padding:18px;">
+
+                        <div class="d-flex">
+
+                            <div style="width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background-color:#e8f7f0;color:#16845b;font-weight:900;margin-right:12px;flex-shrink:0;">
+                                &#10003;
+                            </div>
+
+                            <div>
+
+                                <strong style="display:block;">
+                                    Only selected models participate
+                                </strong>
+
+                                <span style="color:#667085;font-size:13px;">
+                                    Administrators explicitly define the
+                                    model allow-list through the settings
+                                    field.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-lg-6 mb-3">
+
+                    <div style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:12px;padding:18px;">
+
+                        <div class="d-flex">
+
+                            <div style="width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background-color:#e8f7f0;color:#16845b;font-weight:900;margin-right:12px;flex-shrink:0;">
+                                &#10003;
+                            </div>
+
+                            <div>
+
+                                <strong style="display:block;">
+                                    Bounded result volume
+                                </strong>
+
+                                <span style="color:#667085;font-size:13px;">
+                                    Per-model and global limits reduce the
+                                    amount of data returned to the browser.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <ul style="margin:12px 0 0;padding-left:20px;color:#667085;">
-          <li style="margin:8px 0;"><code>searchRecords()</code> debounces typing and tracks a search sequence.</li>
-          <li style="margin:8px 0;">Returned records become commands in the <strong>Records</strong> category.</li>
-          <li style="margin:8px 0;">Each command receives a key ID and split name.</li>
-          <li style="margin:8px 0;">The action service opens the selected record form.</li>
-        </ul>
-      </div>
 
-      <div style="flex:1 1 500px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:26px;">
-        <h3 style="margin-top:0;">4. User result</h3>
-        <div style="margin-bottom:10px;">
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">Global search</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">Keyboard-first</span>
-          <span style="display:inline-block;margin:3px 5px 3px 0;padding:4px 8px;border-radius:7px;background:#f0f3f8;color:#465064;font-size:12px;font-weight:700;">Direct form</span>
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- PERFORMANCE -->
+    <!-- ========================================================= -->
+
+    <section id="performance" style="background-color:#ffffff;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    PERFORMANCE
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Why the implementation is bounded
+                </h2>
+
+                <p style="color:#667085;">
+                    The search is intentionally constrained at multiple
+                    points in the request lifecycle.
+                </p>
+
+            </div>
+
+
+            <div class="row">
+
+                <!-- 01 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            01
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Input threshold
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            No record RPC is issued when the normalized
+                            value contains fewer than two characters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 02 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            02
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Debounced requests
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The frontend waits 250 ms after typing activity
+                            before executing the ORM call.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 03 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            03
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Per-model cap
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            Only 10 results are requested from each
+                            configured model.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 04 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            04
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Global cap
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The backend stops once the combined result
+                            list reaches 100 records.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 05 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            05
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Sequence tracking
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            Searches are associated with sequence numbers
+                            so obsolete responses can be discarded.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 06 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <div style="width:40px;height:40px;line-height:40px;text-align:center;border-radius:12px;background-color:#f3eaf0;color:#714b67;font-weight:900;margin-bottom:16px;">
+                            06
+                        </div>
+
+                        <h3 style="font-size:18px;">
+                            Lazy result creation
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            Commands are created from returned matches
+                            rather than preloading every record.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <ul style="margin:12px 0 0;padding-left:20px;color:#667085;">
-          <li style="margin:8px 0;">Users see relevant configured records without opening a list view first.</li>
-          <li style="margin:8px 0;">The displayed label follows <code>description / record name</code>.</li>
-          <li style="margin:8px 0;">The result remains linked to the exact Odoo model and record ID.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="configuration" style="padding:72px 0;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Administration</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Configuration and usage matrix</h2>
-      <p style="margin:0;color:#667085;">The behavior is controlled by a small number of explicit limits and settings.</p>
-    </div>
+    </section>
 
-    <div style="overflow:auto;border:1px solid #dfe4ec;border-radius:14px;background:#fff;">
-      <table style="width:100%;border-collapse:collapse;min-width:700px;">
-        <thead>
-          <tr>
-            <th style="padding:15px 16px;text-align:left;border-bottom:1px solid #dfe4ec;background:#f0f3f8;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#586276;">Area</th>
-            <th style="padding:15px 16px;text-align:left;border-bottom:1px solid #dfe4ec;background:#f0f3f8;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#586276;">Current implementation</th>
-            <th style="padding:15px 16px;text-align:left;border-bottom:1px solid #dfe4ec;background:#f0f3f8;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#586276;">Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Searchable models</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Many2many <code>ir.model</code></td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Defines which models can participate in global record search.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Minimum input</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">2 characters</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Avoids unnecessary server requests for very short values.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Client debounce</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">250 ms</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Groups rapid keystrokes into fewer RPC calls.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Per-model limit</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">10 records</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Prevents one model from consuming the entire result set.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Total limit</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">100 records</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Bounds payload and Command Palette result volume.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Search method</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;"><code>name_search()</code> + <code>ilike</code></td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Uses the model's normal Odoo name-search behavior.</td></tr>
-          <tr><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Result category</td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;"><strong>Records</strong></td><td style="padding:15px 16px;border-bottom:1px solid #dfe4ec;font-size:14px;">Separates business-record results from standard commands.</td></tr>
-          <tr><td style="padding:15px 16px;font-size:14px;">Open behavior</td><td style="padding:15px 16px;font-size:14px;"><code>ir.actions.act_window</code></td><td style="padding:15px 16px;font-size:14px;">Opens the exact model/record form in the current window.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
 
-<section id="security" style="padding:72px 0;background:#f0f3f8;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Security</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Access-control behavior</h2>
-      <p style="margin:0;color:#667085;">The configuration is read through sudo because it is stored in system configuration, while target record searches run in the current user's environment.</p>
-    </div>
+    <!-- ========================================================= -->
+    <!-- ADVANTAGES -->
+    <!-- ========================================================= -->
 
-    <div style="display:flex;flex-wrap:wrap;gap:12px;">
-      <div style="flex:1 1 450px;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #dfe4ec;border-radius:12px;padding:16px;">
-        <div style="flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e8f7f0;color:#16845b;font-weight:900;">✓</div>
-        <div><b style="display:block;margin-bottom:2px;">Model read access is checked</b><span style="color:#667085;font-size:13px;">The server calls <code>check_access_rights("read")</code> before searching a configured model.</span></div>
-      </div>
+    <section id="advantages" style="background-color:#f0f3f8;padding:70px 20px;">
 
-      <div style="flex:1 1 450px;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #dfe4ec;border-radius:12px;padding:16px;">
-        <div style="flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e8f7f0;color:#16845b;font-weight:900;">✓</div>
-        <div><b style="display:block;margin-bottom:2px;">No sudo on target searches</b><span style="color:#667085;font-size:13px;">The configured target model is obtained from the current environment, so normal Odoo access behavior remains relevant.</span></div>
-      </div>
+        <div class="container">
 
-      <div style="flex:1 1 450px;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #dfe4ec;border-radius:12px;padding:16px;">
-        <div style="flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e8f7f0;color:#16845b;font-weight:900;">✓</div>
-        <div><b style="display:block;margin-bottom:2px;">Only selected models participate</b><span style="color:#667085;font-size:13px;">Administrators explicitly define the model allow-list through the settings field.</span></div>
-      </div>
+            <div class="text-center mb-5">
 
-      <div style="flex:1 1 450px;display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid #dfe4ec;border-radius:12px;padding:16px;">
-        <div style="flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e8f7f0;color:#16845b;font-weight:900;">✓</div>
-        <div><b style="display:block;margin-bottom:2px;">Bounded result volume</b><span style="color:#667085;font-size:13px;">Per-model and global limits reduce the amount of data returned to the browser.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    ADVANTAGES
+                </div>
 
-<section id="performance" style="padding:72px 0;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Performance</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Why the implementation is bounded</h2>
-      <p style="margin:0;color:#667085;">The search is intentionally constrained at multiple points in the request lifecycle.</p>
-    </div>
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Operational advantages for Odoo teams
+                </h2>
 
-    <div style="display:flex;flex-wrap:wrap;gap:18px;">
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">01</div><h3 style="margin:0 0 7px;font-size:18px;">Input threshold</h3><p style="margin:0;color:#667085;font-size:14px;">No record RPC is issued when the normalized value contains fewer than two characters.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">02</div><h3 style="margin:0 0 7px;font-size:18px;">Debounced requests</h3><p style="margin:0;color:#667085;font-size:14px;">The frontend waits 250 ms after typing activity before executing the ORM call.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">03</div><h3 style="margin:0 0 7px;font-size:18px;">Per-model cap</h3><p style="margin:0;color:#667085;font-size:14px;">Only 10 results are requested from each configured model.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">04</div><h3 style="margin:0 0 7px;font-size:18px;">Global cap</h3><p style="margin:0;color:#667085;font-size:14px;">The backend stops once the combined result list reaches 100 records.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">05</div><h3 style="margin:0 0 7px;font-size:18px;">Sequence tracking</h3><p style="margin:0;color:#667085;font-size:14px;">Searches are associated with sequence numbers so obsolete responses can be discarded.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;box-shadow:0 7px 22px rgba(22,32,51,.04);"><div style="width:40px;height:40px;border-radius:12px;background:#f3eaf0;color:#714b67;display:grid;place-items:center;font-weight:900;margin-bottom:16px;">06</div><h3 style="margin:0 0 7px;font-size:18px;">Lazy result creation</h3><p style="margin:0;color:#667085;font-size:14px;">Commands are created from returned matches rather than preloading every record.</p></article>
-    </div>
-  </div>
-</section>
+            </div>
 
-<section id="advantages" style="padding:72px 0;background:#f0f3f8;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Advantages</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Operational advantages for Odoo teams</h2>
-    </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:18px;">
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Less menu navigation</h3><p style="margin:0;color:#667085;font-size:14px;">Users can move from intent to record with fewer clicks and fewer intermediate views.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Reusable architecture</h3><p style="margin:0;color:#667085;font-size:14px;">The same search endpoint can support any configured model that exposes normal Odoo name-search behavior.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Admin-controlled scope</h3><p style="margin:0;color:#667085;font-size:14px;">Adding or removing a model changes the searchable scope without changing the core search algorithm.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Consistent result handling</h3><p style="margin:0;color:#667085;font-size:14px;">Every result carries its model and record ID, allowing a standard Odoo window action.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Cleaner UX</h3><p style="margin:0;color:#667085;font-size:14px;">The dedicated Records category keeps business data separate from standard commands.</p></article>
-      <article style="flex:1 1 300px;background:#fff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;"><h3 style="margin:0 0 7px;font-size:18px;">Easy extension point</h3><p style="margin:0;color:#667085;font-size:14px;">The result payload can later be extended with icons, metadata, breadcrumbs, or custom actions.</p></article>
-    </div>
-  </div>
-</section>
+            <div class="row">
 
-<section id="notes" style="padding:72px 0;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;">
-    <div style="max-width:760px;margin-bottom:30px;">
-      <div style="color:#714b67;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em;">Important implementation notes</div>
-      <h2 style="margin:7px 0 10px;font-size:clamp(28px,3vw,40px);letter-spacing:-.04em;line-height:1.15;">Behavior to keep in mind</h2>
-    </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-    <div style="padding:17px 18px;border-radius:13px;border:1px solid #f1d69c;background:#fff5df;color:#745000;">
-      <strong style="color:#664600;">Search behavior:</strong>
-      the current backend uses <code>name_search(..., operator="ilike")</code>, so a value such as
-      <strong>p00018</strong> is intended to return names matching that search term.
-      A value such as <strong>18</strong> can match names containing that sequence, but it should not
-      be expected to return unrelated values such as <strong>P00008</strong> merely because they have
-      similar numeric patterns. Fuzzy ranking would be a separate enhancement.
-    </div>
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
 
-    <div style="height:14px;"></div>
+                        <h3 style="font-size:18px;">
+                            Less menu navigation
+                        </h3>
 
-    <div style="padding:17px 18px;border-radius:13px;border:1px solid #f1d69c;background:#fff5df;color:#745000;">
-      <strong style="color:#664600;">Concurrency note:</strong>
-      the current <code>searchRecords()</code> sequence check protects the record-search response from
-      becoming obsolete. For strict end-to-end ordering, the surrounding <code>setCommands()</code>
-      flow can also check the same sequence after awaited operations before mutating
-      <code>state.commands</code>.
-    </div>
-  </div>
-</section>
+                        <p style="color:#667085;font-size:14px;">
+                            Users can move from intent to record with fewer
+                            clicks and fewer intermediate views.
+                        </p>
 
-</main>
+                    </div>
 
-<footer style="padding:38px 0 52px;border-top:1px solid #dfe4ec;color:#667085;font-size:13px;">
-  <div style="width:calc(100% - 40px);max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-    <div><strong style="color:#172033;">Command Palette Search Records</strong><br>Odoo technical documentation page</div>
-    <div>Frontend: CommandPalette patch · Backend: AbstractModel · Storage: ir.config_parameter</div>
-  </div>
-</footer>
+                </div>
 
-</body>
-</html>
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <h3 style="font-size:18px;">
+                            Reusable architecture
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The same search endpoint can support any
+                            configured model that exposes normal Odoo
+                            name-search behavior.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <h3 style="font-size:18px;">
+                            Admin-controlled scope
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            Adding or removing a model changes the searchable
+                            scope without changing the core search algorithm.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <h3 style="font-size:18px;">
+                            Consistent result handling
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            Every result carries its model and record ID,
+                            allowing a standard Odoo window action.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <h3 style="font-size:18px;">
+                            Cleaner UX
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The dedicated Records category keeps business
+                            data separate from standard commands.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+
+                    <div class="h-100"
+                         style="background-color:#ffffff;border:1px solid #dfe4ec;border-radius:16px;padding:24px;">
+
+                        <h3 style="font-size:18px;">
+                            Easy extension point
+                        </h3>
+
+                        <p style="color:#667085;font-size:14px;">
+                            The result payload can later be extended with
+                            icons, metadata, breadcrumbs, or custom actions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- NOTES -->
+    <!-- ========================================================= -->
+
+    <section id="notes" style="background-color:#ffffff;padding:70px 20px;">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <div style="color:#714b67;font-weight:800;font-size:13px;letter-spacing:1px;">
+                    IMPORTANT IMPLEMENTATION NOTES
+                </div>
+
+                <h2 style="margin:7px 0 10px;font-size:36px;font-weight:800;">
+                    Behavior to keep in mind
+                </h2>
+
+            </div>
+
+
+            <!-- NOTE 1 -->
+
+            <div style="padding:18px;border-radius:12px;border:1px solid #f1d69c;background-color:#fff5df;color:#745000;margin-bottom:15px;">
+
+                <strong style="color:#664600;">
+                    Search behavior:
+                </strong>
+
+                the current backend uses
+                <code>name_search(..., operator="ilike")</code>,
+                so a value such as <strong>p00018</strong> is intended to
+                return names matching that search term.
+
+                A value such as <strong>18</strong> can match names
+                containing that sequence, but it should not be expected
+                to return unrelated values such as <strong>P00008</strong>
+                merely because they have similar numeric patterns.
+
+                Fuzzy ranking would be a separate enhancement.
+
+            </div>
+
+
+            <!-- NOTE 2 -->
+
+            <div style="padding:18px;border-radius:12px;border:1px solid #f1d69c;background-color:#fff5df;color:#745000;">
+
+                <strong style="color:#664600;">
+                    Concurrency note:
+                </strong>
+
+                the current <code>searchRecords()</code> sequence check
+                protects the record-search response from becoming obsolete.
+
+                For strict end-to-end ordering, the surrounding
+                <code>setCommands()</code> flow can also check the same
+                sequence after awaited operations before mutating
+                <code>state.commands</code>.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer style="background-color:#172033;color:#ffffff;padding:38px 20px 50px;">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+
+                    <strong>
+                        Command Palette Search Records
+                    </strong>
+
+                    <br>
+
+                    <span style="font-size:13px;color:#c8ced8;">
+                        Odoo technical documentation page
+                    </span>
+
+                </div>
+
+
+                <div class="col-12 col-md-6 text-md-right">
+
+                    <span style="font-size:13px;color:#c8ced8;">
+                        Frontend: CommandPalette patch
+                        · Backend: AbstractModel
+                        · Storage: ir.config_parameter
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
